@@ -8,7 +8,7 @@ A Go-based tool for monitoring Kubernetes resources and handling watch events, i
 - Configurable timeout for detecting stuck watches.
 
 ## Prerequisites
-- Go 1.16+
+- Go 1.22+
 - Kubernetes cluster access (configured via `kubeconfig`).
 
 ## Setup
@@ -25,7 +25,7 @@ A Go-based tool for monitoring Kubernetes resources and handling watch events, i
 ## Usage
 Run the tool with default settings:
 ```bash
-go run main.go
+GODEBUG=http2debug=2 go run watch-client.go --kubeconfig=/path/to/kubeconfig [--namespace=your-namespace] 2>&1 | tee http2-debug.log
 ```
 
 ### Configuration
